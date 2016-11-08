@@ -53,27 +53,24 @@ app.post('/', function (req, res) {
     const category = req.body.category;
     const quantity = req.body.quantity;
     const url = 'https://ria.ru/' + category;
-    //var data = parser(url, quantity);
+    var data = parser(url, quantity);
 
-    var promise = parser(url, quantity);
-    promise.then(function(data) {
+    console.log(data);
 
-        res.redirect('/?category=' + category + '&quantity=' + quantity);
+    res.redirect('/?category=' + category + '&quantity=' + quantity);
 
-        console.log(data);
-
-        res.render('index', {
-            categoryType: req.body.category,
-            img: data.img,
-            title: data.title,
-            text: data.text,
-            time: data.time,
-            date: data.date,
-            comments: data.comments,
-            views: data.views,
-            amount: data.amount
-        });
-    });
+    res.render('index', {
+        categoryType: req.body.category,
+        img: data.img,
+        title: data.title,
+        text: data.text,
+        time: data.time,
+        date: data.date,
+        comments: data.comments,
+        views: data.views,
+        amount: data.amount
+     });
+    
 });
 
 function parser(url, q)
