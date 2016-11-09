@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="./css/style.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
@@ -17,38 +18,38 @@
 
     <div class="options row">
         <form action="/" method="post">
-        <div class="col-sm-4">
-            <div class="form-group">
-                <label for="category">Категория новостей:</label><br>
-                <select id="category" class="form-control" name="category">
-                    <option value="" disabled selected>Выберите категорию</option>
-                    <option value="politics">Политика</option>
-                    <option value="economy">Экономика</option>
-                    <option value="sport">Спорт</option>
-                    <option value="world">В мире</option>
-                    <option value="city_spb">Санкт-Петербург</option>
-                </select>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="category">Категория новостей:</label><br>
+                    <select id="category" class="form-control" name="category">
+                        <option value="" disabled selected>Выберите категорию</option>
+                        <option value="politics">Политика</option>
+                        <option value="economy">Экономика</option>
+                        <option value="sport">Спорт</option>
+                        <option value="world">В мире</option>
+                        <option value="city_spb">Санкт-Петербург</option>
+                    </select>
+                </div>
             </div>
-        </div>
 
-        <div class="col-sm-4">
-            <div class="form-group">
-                <label for="quantity">Выводить на страницу:</label><br>
-                <select id="quantity" class="form-control" name="quantity">
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="15">15</option>
-                    <option value="20">20</option>
-                </select>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="quantity">Выводить на страницу:</label><br>
+                    <select id="quantity" class="form-control" name="quantity">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
             </div>
-        </div>
 
-        <div class="col-sm-4">
-            <div class="form-group">
-                <label for="submit">&nbsp;</label><br>
-                <input type="submit" class="form-control" id="submit" value="Загрузить">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="submit">&nbsp;</label><br>
+                    <input type="submit" class="form-control" id="submit" value="Загрузить">
+                </div>
             </div>
-        </div>
         </form>
     </div>
 
@@ -57,27 +58,27 @@
             <h2>Новости {{categoryType}}</h2>
         </div>
 
-    {{#each amount}}
-        <div class="news row">
-            <div class="row">
-                <div class="col-sm-3"><img src="{{#each img}}{{this}}{{/each}}" alt=""></div>
-                <div class="col-sm-9">
-                    <div class="row">
-                        <h3>{{#each title}}{{this}}{{/each}}</h3>
-                    </div>
-                    <div class="row">
-                        <p>{{#each text}}{{this}}{{/each}}</p>
-                    </div>
-                    <div class="row">
-                        <span>Время: {{#each time}}{{this}}{{/each}}</span>
-                        <span>Дата: {{#each date}}{{this}}{{/each}}</span>
-                        <span>Комментариев: {{#each comments}}{{this}}{{/each}}</span>
-                        <span>Просмотров: {{#each views}}{{this}}{{/each}}</span>
+        {{#each data}}
+            <div class="news row">
+                <div class="row">
+                    <div class="col-sm-3"><img src="{{img}}" alt=""></div>
+                    <div class="col-sm-9">
+                        <div class="row">
+                            <h3>{{title}}</h3>
+                        </div>
+                        <div class="row">
+                            <p>{{text}}</p>
+                        </div>
+                        <div class="row">
+                            <span>Время: {{time}}</span>
+                            <span>Дата: {{date}}</span>
+                            <span>Комментариев: {{comments}}</span>
+                            <span>Просмотров: {{views}}</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    {{/each}}
+        {{/each}}
     {{/if}}
 
 </div>

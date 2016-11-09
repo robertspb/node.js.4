@@ -7,3 +7,11 @@ html, body{
 h3{
     margin-top: 0 !important;
 }
+
+.news {
+    min-height: 170px;
+}
+
+.news img {
+    width: 100%;
+}
